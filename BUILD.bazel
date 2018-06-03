@@ -12,16 +12,24 @@ filegroup(
 
 # This is like a "js_library", but there are no actions to run on JS files so a
 # filegroup is semantically equivalent.
-filegroup(
-    name = "api",
-    srcs = ["index.js"],
-)
+# filegroup(
+#     name = "api",
+#     srcs = ["index.js"],
+# )
 
 jasmine_node_test(
     name = "test",
-    srcs = glob(["*.test.js"]),
+    srcs = glob(["lib/*.test.js"]),
     node_modules = "//:node_modules",
-    deps = [
-        ":api",
+    deps = [],
+)
+
+load("@build_bazel_rules_nodejs//:defs.bzl", "nodejs_binary")
+
+nodejs_binary(
+    name = "api",
+    data = [
+        "index.js"
     ],
+    entry_point = "api/index.js"
 )

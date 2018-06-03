@@ -4,9 +4,9 @@
   "description": "Simple Nodejs API built using Bazel",
   "main": "index.js",
   "scripts": {
-    "start": "bazel run @nodejs//:npm install",
+    "install": "bazel run @nodejs//:npm install",
+    "start": "ibazel run api",
     "test": "ibazel run test",
-    "build": "ibazel run api",
     "clean": "bazel clean --expunge"
   },
   "keywords": [],

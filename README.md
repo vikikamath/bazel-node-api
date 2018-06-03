@@ -1,3 +1,26 @@
+# Install
+
+## OSX
+
+```bash
+brew install bazel
+```
+
+```bash
+npm run install
+```
+
+# Run
+
+```bash
+npm run start
+```
+
+# Unit test
+
+```bash
+npm run test
+```
 
 # Interact with server
 
